@@ -55,9 +55,9 @@
 5. Run frontend
 
     ### `cd angular/pokedex-app/frontend/`
-    ### `ng serve`
+    ### `npm start`
 
 6. Run test
 
     ### `npm run test` (backend)
-    ### `ng test` (frontend)
+    ### `npm test` (frontend)
