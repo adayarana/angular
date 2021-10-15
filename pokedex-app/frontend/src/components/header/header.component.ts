@@ -1,5 +1,4 @@
-/* eslint-disable no-empty-function */
-/* eslint-disable class-methods-use-this */
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export default class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {

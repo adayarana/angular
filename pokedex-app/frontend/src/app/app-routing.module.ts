@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -11,4 +10,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export default class AppRoutingModule { }
+export class AppRoutingModule { }

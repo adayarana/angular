@@ -1,5 +1,3 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/prefer-default-export */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 

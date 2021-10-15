@@ -1,6 +1,4 @@
-/* eslint-disable class-methods-use-this */
-/* eslint-disable no-empty-function */
-/* eslint-disable import/prefer-default-export */
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { Component, OnInit } from '@angular/core';
 
 @Component({
