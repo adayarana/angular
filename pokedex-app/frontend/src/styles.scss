@@ -1,1 +1,76 @@
-/* You can add global styles to this file, and also import other style files */
+@import url(//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon);
+@import './sass/var.scss';
+
+@font-face {font-family: "Pokemon"; src: url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.eot"); src: url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.woff") format("woff"), url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.svg#Pokemon") format("svg"); }
+
+* {
+    font-family: 'Pokemon';
+    background: $primary;
+    color: $tertiary;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-shadow: 0.25rem 0.25rem $secondary;
+}
+
+button {
+    all: unset;
+    background: $secondary;
+    color: $tertiary;
+    border: 2px solid $tertiary;
+    cursor: pointer;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+    border-radius: 50em;
+    transition: background linear 1.5s;
+    box-shadow: 2px 2px $tertiary;
+    text-shadow: none;
+}
+
+button:hover {
+    background: $primary;
+    color: $secondary;
+    text-shadow: none;
+}
+
+input {
+    caret-color: $tertiary;
+    background: $secondary;
+    color: $tertiary;
+    cursor: pointer;
+    border-radius: 15%;
+    border: 1.5px solid $tertiary;
+    width: 100px;
+    height: 30px;
+    outline: none;
+    text-align: center;
+    transition: background linear 1.5s;
+    margin: 0.5rem;
+    padding: 0.25rem;
+    box-shadow: 2px 2px $tertiary;
+    text-shadow: none;
+  }
+
+input:hover {
+    background: $primary;
+    color: $secondary;
+    text-shadow: none;
+  }
+
+input:focus {
+    border: 3px solid $tertiary;
+  }
+
+label {
+  margin: 0.5rem;
+  padding: 0.25rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}

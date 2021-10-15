@@ -322,3 +322,7 @@ auth-data.js
 /.expo
 .expo/
 .DS_Store
+
+# Angular Environment
+environment.prod.ts
+environment.ts

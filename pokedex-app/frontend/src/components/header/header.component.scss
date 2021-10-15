@@ -1,0 +1,33 @@
+* {
+    margin: 0.5rem;
+}
+
+.header-container {
+    width: 100pw;
+    top: 0;
+
+    .header-container__nav-logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: auto;
+    }
+
+    > div {
+        display: flex;
+        align-items: center;
+    }
+
+
+}
+
+@media screen and (min-width: 415px) {
+
+    .header-container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        margin: 0;
+        padding: 0;
+    }
+}
