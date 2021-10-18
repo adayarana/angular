@@ -3,10 +3,6 @@ module.exports = {
         "browser": true,
         "es2021": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended"
-    ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": 12,
@@ -16,5 +12,8 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
+    'no-underscore-dangle': 0,
+    'comma-dangle': [2, 'never'],
+    'no-useless-constructor': 0
     }
 };
