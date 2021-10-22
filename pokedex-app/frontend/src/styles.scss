@@ -29,8 +29,7 @@ button {
 }
 
 button:hover {
-    background: $primary;
-    color: $secondary;
+    color: $primary;
     text-shadow: none;
 }
 
@@ -53,9 +52,8 @@ input {
   }
 
 input:hover {
-    background: $primary;
-    color: $secondary;
-    text-shadow: none;
+  color: $primary;
+  text-shadow: none;
   }
 
 input:focus {

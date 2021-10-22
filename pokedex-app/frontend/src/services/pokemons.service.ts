@@ -1,17 +1,26 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Pokemon } from 'src/interfaces/pokemon.interface';
+import { Pokemons } from 'src/interfaces/pokemons.interface';
 import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export default class PokemonsService {
-    private apiUrl = environment.pokemonApiURL;
 
     constructor(private http: HttpClient) { }
 
-    getProducts():Observable<any> {
-      return this.http.get(this.apiUrl);
+    getPokemons():Observable<Pokemons> {
+      return this.http.get<Pokemons>(environment.pokemonsApiURL);
+    }
+
+    getMoreData(pokemon:any):Observable<Pokemon> {
+      return this.http.get<Pokemon>(`${environment.pokemonApiURL}${pokemon}`)
+    }
+
+    getNextPage(url:any) {
+      return this.http.get(url)
     }
 }

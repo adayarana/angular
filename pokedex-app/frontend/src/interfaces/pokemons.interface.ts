@@ -1,5 +1,6 @@
 export interface Pokemons {
-    id: number,
-    name: string,
-    picture: string,
+    count: number,
+    next: string,
+    previous: string,
+    results: Array<[]>
 }
