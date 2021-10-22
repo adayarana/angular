@@ -1,1 +1,19 @@
-<p>pokemons works!</p>
+<div class="container">
+    <ul>
+        <li *ngFor="let pokemon of pokemons">
+            <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name">
+            <h3>{{ pokemon.name }}</h3>
+            <p>
+                <b>Type: {{pokemon.types[0].type.name}}</b>
+            </p>
+            <p>
+                <b>Height: {{pokemon.height}}</b>
+            </p>
+            <p>
+                <b>Health: {{pokemon.stats[0].base_stat}}</b>
+            </p>
+        </li>
+    </ul>
+    <button (click)="previousPage()">Previous</button>
+    <button (click)="nextPage()">Next</button>
+</div>
