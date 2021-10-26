@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import { Component, OnInit } from '@angular/core';
+import { PokemonsService } from 'src/services/pokemons.service';
 
 @Component({
   selector: 'app-pokemon',
@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokemon.component.scss']
 })
 export class PokemonComponent implements OnInit {
-  constructor() { }
+  pokemon = this.pokemonsService.pokemon
+
+  constructor(private pokemonsService: PokemonsService) { }
 
   ngOnInit(): void {
   }
