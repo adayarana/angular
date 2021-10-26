@@ -1,10 +1,11 @@
 <header class="header-container">
     <div class="header-container__nav-logo">
-        <h1>PokedexApp</h1>
+        <h1><a routerLink="">PokedexApp</a></h1>
     </div>
+    <h5>{{pokemon$ | async | json}}</h5>
     <nav class="header-container__nav-menu">
         <ul>
-            <li>Pokedex</li>
+            <li><a routerLink="/favourites">Favourites</a></li>
             <li>
                 <form action="">
                     <input 
@@ -13,7 +14,10 @@
                     name="search"
                     type="search"
                     placeholder="Search"
-                    autocomplete="off">
+                    autocomplete="off"
+                    (keyup)="searchPokemon()"
+                    [(ngModel)]="searchText"
+                    >
                 </form>
             </li>
         </ul>
