@@ -13,27 +13,9 @@ export class PokemonsService {
   pokemons: Pokemon[] = []
   pokemon: any
   filteredPokemons: Pokemon[] = []
-  // pokedex: Pokemon[] = this.filteredPokemons.length > 0 ? this.filteredPokemons : this.pokemons
+  pokedex: Pokemon[] = this.filteredPokemons.length > 0 ? this.filteredPokemons : this.pokemons
 
   constructor(private http: HttpClient) { }
-  
-  pokemonSubject = new Subject<Pokemon[]>();
-
-  get pokemonAction$():Observable<Pokemon[]> {
-    return this.pokemonSubject.asObservable();
-  }
-
-  searchPokemon(searchText: string): void {
-    
-    
-    const filteredPokemons = this.pokemons.filter((pokemon) => pokemon.name.toLowerCase().includes(searchText.toLowerCase()))
-    
-    this.pokemonSubject.next(filteredPokemons)
-    // this.pokemonsService.filteredPokemons = this.pokemonsService.pokemons.filter((pokemon) => pokemon.name.toLowerCase().includes(this.searchText.toLowerCase()) ||
-    // pokemon.types[0].type.name.toLowerCase().includes(this.searchText.toLowerCase())
-    // )
-    
-  }
 
     getPokemons():Observable<Pokemons> {
       return this.http.get<Pokemons>(environment.pokemonsApiURL);
