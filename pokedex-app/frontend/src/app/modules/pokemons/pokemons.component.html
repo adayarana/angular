@@ -3,18 +3,11 @@
         <li *ngFor="let pokemon of pokemons">
             <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name">
             <h3>{{ pokemon.name }} 
-                <em (click)="handleFavouritePokemon(pokemon)" [ngClass]="pokemon.types[0].type.name === 'dragon' ? 'fas fa-heart' : 'far fa-heart'"></em>
+                <em (click)="handleFavouritePokemon(pokemon)" [ngClass]="pokemon.stats[1].base_stat >= 80 ? 'fas fa-heart' : 'far fa-heart'"></em>
             </h3>
-            
-            <p>
-                <b>Type: {{pokemon.types[0].type.name}}</b>
-            </p>
-            <p>
-                <b>Experience: {{pokemon.base_experience}}</b>
-            </p>
-            <p>
-                <b>Health: {{pokemon.stats[0].base_stat}}</b>
-            </p>
+            <p>Pokedex: #{{pokemon.id}}</p>
+            <p>Type: {{pokemon.types[0].type.name}}</p>
+            <p>Health: {{pokemon.stats[0].base_stat}}</p>
             <button (click)="getMoreInfo(pokemon)">More Info</button>
         </li>
     </ul>

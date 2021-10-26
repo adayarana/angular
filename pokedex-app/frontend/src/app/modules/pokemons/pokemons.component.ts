@@ -10,9 +10,8 @@ import { PokemonsService } from 'src/services/pokemons.service';
 })
 export class PokemonsComponent implements OnInit {
   pokemons: Pokemon[] = this.pokemonsService.pokemons
-  pokemon$ = this.pokemonsService.pokemonAction$
-  // filteredPokemons: Pokemon[] = this.pokemonsService.filteredPokemons
-  // pokedex: Pokemon[] = this.pokemonsService.pokedex
+  filteredPokemons: Pokemon[] = this.pokemonsService.filteredPokemons
+  pokedex: Pokemon[] = this.pokemonsService.pokedex
   nextUrl: string[] = []
   previousUrl: string[] = []
 
@@ -33,8 +32,7 @@ export class PokemonsComponent implements OnInit {
             .subscribe((res:any) => {
               this.pokemonsService.pokemons.push(res)
               this.pokemonsService.pokemons.sort((a: any, b: any) => a.id - b.id)
-              // console.log(`Esto es pokemons -> pokedex: ${this.pokedex}`)
-              // console.log(`Esto es pokemons -> filteredPokemons: ${this.pokemonsService.filteredPokemons}`)
+              console.log(`Esto es pokemons -> filteredPokemons: ${this.pokemonsService.filteredPokemons}`)
           
             })
         })
