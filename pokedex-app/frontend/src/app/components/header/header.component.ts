@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonsService } from 'src/services/pokemons.service';
+import { PokemonsService } from 'src/app/services/pokemons.service';
 
 @Component({
   selector: 'app-header',
@@ -18,8 +18,5 @@ export class HeaderComponent implements OnInit {
      this.pokemonsService.filteredPokemons = this.pokemonsService.pokemons.filter((pokemon) => pokemon.name.toLowerCase().includes(this.searchText.toLowerCase()) ||
      pokemon.types[0].type.name.toLowerCase().includes(this.searchText.toLowerCase())
      )
-    
-     console.log(`Esto es Header -> Search text: ${this.searchText}`)
-     console.log(`Esto es Header -> filtered pokemons: ${this.pokemonsService.filteredPokemons}`)
   }
 }

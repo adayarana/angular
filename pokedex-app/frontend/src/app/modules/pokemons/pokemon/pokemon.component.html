@@ -4,7 +4,7 @@
             <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name">
             <img [src]="pokemon.sprites.back_default" [alt]="pokemon.name">
             <h3>{{ pokemon.name }} 
-                <em [ngClass]="pokemon.stats[1].base_stat >= 80 ? 'fas fa-heart' : 'far fa-heart'"></em>
+                <em (click)="handleFavouritePokemon(pokemon)" class="far fa-heart"></em>
             </h3>
             <p>Pokedex: #{{pokemon.id}}</p>
             <p>Type: {{pokemon.types[0].type.name}}</p>
@@ -16,4 +16,5 @@
             <p>Height: {{pokemon.height}}</p>
         </li>
     </ul>
+    <button (click)="goBack()">Back</button>
 </div>

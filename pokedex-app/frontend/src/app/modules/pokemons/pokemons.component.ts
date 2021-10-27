@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Pokemon } from 'src/interfaces/pokemon.interface';
-import { PokemonsService } from 'src/services/pokemons.service';
+import { PokemonsService } from 'src/app/services/pokemons.service';
 
 @Component({
   selector: 'app-pokemons',
@@ -10,6 +10,7 @@ import { PokemonsService } from 'src/services/pokemons.service';
 })
 export class PokemonsComponent implements OnInit {
   pokemons: Pokemon[] = this.pokemonsService.pokemons
+  favouritesPokemon: Pokemon[] = this.pokemonsService.favouritesPokemon
   filteredPokemons: Pokemon[] = this.pokemonsService.filteredPokemons
   pokedex: Pokemon[] = this.pokemonsService.pokedex
   nextUrl: string[] = []
@@ -32,12 +33,9 @@ export class PokemonsComponent implements OnInit {
             .subscribe((res:any) => {
               this.pokemonsService.pokemons.push(res)
               this.pokemonsService.pokemons.sort((a: any, b: any) => a.id - b.id)
-              console.log(`Esto es pokemons -> filteredPokemons: ${this.pokemonsService.filteredPokemons}`)
-          
             })
         })
         obs$.unsubscribe();
-        console.log(this.pokemons)
       })
 
   
@@ -83,11 +81,28 @@ export class PokemonsComponent implements OnInit {
     }
 
     handleFavouritePokemon(pokemon: Pokemon) {
-      console.log(pokemon)
+      // const favouritePokemon = document.getElementById(pokemon.name)
+      // switch(favouritePokemon?.className) {
+      //   case 'far fa-heart':
+      //     favouritePokemon.className = 'fas fa-heart'
+      //     favouritePokemon.style.fontWeight = 'bold'
+      //     break;
+
+      //   case 'fas fa-heart':
+      //     favouritePokemon.className = 'far fa-heart'
+      //     favouritePokemon.style.fontWeight = ''
+      //     break;
+
+      //   default:
+      //     favouritePokemon!.className = 'far fa-heart'
+      // }
+      this.pokemonsService.favouritesPokemon.push(pokemon)
+      this.pokemonsService.favouritesPokemon.sort((a: any, b: any) => a.id - b.id)
+      this.favouritesPokemon = this.pokemonsService.favouritesPokemon
+      this.router.navigate(['/favourites'])
     }
 
     getMoreInfo(pokemon: Pokemon) {
-      console.log(pokemon)
       this.pokemonsService.pokemon = pokemon
       this.router.navigate(['/pokemon'])
     } 
