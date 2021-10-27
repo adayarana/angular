@@ -1,1 +1,21 @@
-<p>favourites works!</p>
+<div class="container">
+    <div *ngIf="favouritesPokemon.length > 0; else noFavourites">
+        <ul>
+            <li *ngFor="let pokemon of favouritesPokemon">
+                <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name">
+                <h3>{{ pokemon.name }} 
+                    <em [ngClass]="pokemon.stats[1].base_stat >= 80 ? 'fas fa-heart' : 'far fa-heart'"></em>
+                    <em (click)="deletePokemon(pokemon)" class="fas fa-trash"></em>
+                </h3>
+                <p>Pokedex: #{{pokemon.id}}</p>
+                <p>Type: {{pokemon.types[0].type.name}}</p>
+                <p>Health: {{pokemon.stats[0].base_stat}}</p>
+                <button (click)="getMoreInfo(pokemon)">More Info</button>
+            </li>
+        </ul>
+    </div>
+    <ng-template #noFavourites>
+        <p>No favourites Pokemon yet</p>
+    </ng-template>
+    <button (click)="goBack()">Back</button>
+</div>
