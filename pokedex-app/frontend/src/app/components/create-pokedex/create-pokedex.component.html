@@ -1,0 +1,36 @@
+<div class="container">
+    <div>
+        <!-- id="name"
+        name="name"
+        id="level"
+        name="level"
+        id="favourite"
+        name="favourite" -->
+        <span>CREATE</span>
+        <form [formGroup]="pokedexForm" (ngSubmit)="addPokemon()">
+            <input 
+            formControlName="name"
+            type="text" 
+            placeholder="Name"
+            autocomplete="off"
+            autocapitalize="on"
+            >
+            <input 
+            formControlName="level"
+            type="number"
+            min="1"
+            max="100" 
+            placeholder="Level"
+            autocomplete="off"
+            >
+            <input 
+            formControlName="favourite"
+            type="checkbox" 
+            placeholder="Favourite">
+        </form>
+        <div>
+            <button type="submit">Add</button>
+            <button routerLink="/pokedex">Back</button>
+        </div>
+    </div>
+</div>
