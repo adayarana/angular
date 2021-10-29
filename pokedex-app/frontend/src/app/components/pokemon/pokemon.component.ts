@@ -27,7 +27,4 @@ export class PokemonComponent implements OnInit {
     this.router.navigate(['/favourites'])
   }
 
-  goBack() {
-    this.router.navigate(['/'])
-  }
 }

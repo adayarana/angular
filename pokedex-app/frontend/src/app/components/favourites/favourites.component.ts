@@ -21,10 +21,6 @@ export class FavouritesComponent implements OnInit {
     this.router.navigate(['/pokemon'])
   } 
 
-  goBack() {
-    this.router.navigate(['/'])
-  }
-
   deletePokemon(favouritePokemon: Pokemon) {
     this.pokemonsService.favouritesPokemon = this.pokemonsService.favouritesPokemon.filter((pokemon: any) => pokemon.id !== favouritePokemon.id)
     this.favouritesPokemon = this.pokemonsService.favouritesPokemon

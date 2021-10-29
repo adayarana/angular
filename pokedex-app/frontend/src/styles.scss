@@ -72,3 +72,14 @@ ul {
 a {
   text-decoration: none;
 }
+
+.fas, .far {
+  color: $secondary;
+  cursor: pointer;
+  box-shadow: none;
+  text-shadow: none
+}
+
+.fa-heart, .fa-star {
+  color: $tertiary
+}
