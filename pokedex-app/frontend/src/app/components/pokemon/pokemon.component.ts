@@ -11,6 +11,7 @@ import { PokemonsService } from 'src/app/services/pokemons.service';
 export class PokemonComponent implements OnInit {
   pokemon = this.pokemonsService.pokemon
   favouritesPokemon: Pokemon[] = this.pokemonsService.favouritesPokemon
+  fans = Math.floor(Math.random() * (25 - 2) + 2)
 
   constructor(private pokemonsService: PokemonsService, private router: Router) { }
 
@@ -18,13 +19,22 @@ export class PokemonComponent implements OnInit {
     if(this.pokemonsService.pokemon === undefined) {
       this.router.navigate(['/'])
     }
-  }
 
+    this.myTimer()
+    
+  }
+  
   handleFavouritePokemon(pokemon: Pokemon) {
     this.pokemonsService.favouritesPokemon.push(pokemon)
     this.pokemonsService.favouritesPokemon.sort((a: any, b: any) => a.id - b.id)
     this.favouritesPokemon = this.pokemonsService.favouritesPokemon
     this.router.navigate(['/favourites'])
+  }
+  
+  myTimer() {
+    setInterval(() => {
+      this.fans = Math.floor(Math.random() * (25 - 2) + 2)
+    }, 5000)
   }
 
 }
