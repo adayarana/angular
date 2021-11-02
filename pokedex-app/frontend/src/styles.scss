@@ -33,6 +33,11 @@ button:hover {
     text-shadow: none;
 }
 
+button:disabled {
+    color: $secondary;;
+    text-shadow: none;
+}
+
 input {
     caret-color: $tertiary;
     background: $secondary;

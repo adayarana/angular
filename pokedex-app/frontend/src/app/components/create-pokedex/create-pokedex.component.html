@@ -1,35 +1,52 @@
 <div class="container">
     <div>
-        <!-- id="name"
-        name="name"
-        id="level"
-        name="level"
-        id="favourite"
-        name="favourite" -->
-        <span>CREATE</span>
+        <span>NEW POKEMON</span>
         <form [formGroup]="pokedexForm" (ngSubmit)="addPokemon()">
-            <input 
-            formControlName="name"
-            type="text" 
-            placeholder="Name"
-            autocomplete="off"
-            autocapitalize="on"
-            >
-            <input 
-            formControlName="level"
-            type="number"
-            min="1"
-            max="100" 
-            placeholder="Level"
-            autocomplete="off"
-            >
-            <input 
-            formControlName="favourite"
-            type="checkbox" 
-            placeholder="Favourite">
+            <div>
+                <label for="name">Name</label>
+                <input 
+                id="name"
+                name="name"
+                formControlName="name"
+                type="text" 
+                placeholder="Name"
+                autocomplete="off"
+                autocapitalize="on"
+                required
+                >
+                <div *ngIf="pokedexForm.get('name')?.hasError('required') && pokedexForm.get('name')?.touched">
+                    <span>Pokemon name is required</span>
+                </div>
+            </div>
+            <div>
+                <label for="level">Level</label>
+                <input 
+                id="level"
+                name="level"
+                formControlName="level"
+                type="number"
+                min="1"
+                max="100" 
+                placeholder="Level"
+                autocomplete="off"
+                required
+                >
+                <div *ngIf="pokedexForm.get('level')?.hasError('required') && pokedexForm.get('level')?.touched">
+                    <span>Pokemon level is required</span>
+                </div>
+            </div>
+            <div>
+                <label for="favourite">Favourite</label>
+                <input 
+                id="favourite"
+                name="favourite"
+                formControlName="favourite"
+                type="checkbox" 
+                >
+            </div>
+            <button type="submit" [disabled]="pokedexForm.invalid">Add</button>
         </form>
         <div>
-            <button type="submit">Add</button>
             <button routerLink="/pokedex">Back</button>
         </div>
     </div>
