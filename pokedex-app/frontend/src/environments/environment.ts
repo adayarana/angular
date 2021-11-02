@@ -5,7 +5,9 @@
 export const environment = {
   production: false,
   pokemonsApiURL: 'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0',
-  pokemonApiURL: 'https://pokeapi.co/api/v2/pokemon/'
+  pokemonApiURL: 'https://pokeapi.co/api/v2/pokemon/',
+  ddbbPokedexUrl: 'http://localhost:5000/pokedex-app/pokedex'
+
 };
 
 /*
