@@ -16,10 +16,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Dragonite</td>
-                    <td>88</td>
+                <tr *ngFor="let pokemon of pokedex; index as i">
+                    <td>{{i + 1}}</td>
+                    <td>{{pokemon.name}}</td>
+                    <td>{{pokemon.level}}</td>
                     <td>
                         <em class="far fa-star"></em>
                     </td>
