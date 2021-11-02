@@ -77,7 +77,7 @@ function controller() {
 
   const deleteAllPokemons = async (req, res) => {
     try {
-      await Pokemons.deleteMany(req.query);
+      await Pokedex.deleteMany(req.query);
       res.status(204);
       res.send();
     } catch (error) {
