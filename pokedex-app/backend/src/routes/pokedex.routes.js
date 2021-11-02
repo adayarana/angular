@@ -16,13 +16,13 @@ routes
   .get(getApi);
 
 routes
-  .route('/favourites')
+  .route('/pokedex')
   .get(getAllPokemons)
   .post(createPokemon)
   .delete(deleteAllPokemons);
 
 routes
-  .route('/favourites/:id')
+  .route('/pokedex/:id')
   .get(getById)
   .put(updatePokemon)
   .delete(deletePokemon);
