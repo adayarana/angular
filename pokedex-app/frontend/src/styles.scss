@@ -34,8 +34,7 @@ button:hover {
 }
 
 button:disabled {
-    color: $secondary;;
-    text-shadow: none;
+    display: none;
 }
 
 input {

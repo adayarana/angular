@@ -5,7 +5,6 @@
                 <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name">
                 <h3>{{ pokemon.name }} 
                     <em id="{{pokemon.name}}" (click)="handleFavouritePokemon(pokemon)" class="far fa-heart"></em>
-                    <!-- [ngClass]="pokemon.types[0].type.name === 'dragon' ? 'fas fa-heart' : 'far fa-heart'" -->
                 </h3>
                 <p>Pokedex: #{{pokemon.id}}</p>
                 <p>Type: {{pokemon.types[0].type.name}}</p>

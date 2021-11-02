@@ -21,7 +21,7 @@
                     <td>{{pokemon.name}}</td>
                     <td>{{pokemon.level}}</td>
                     <td>
-                        <em class="far fa-star"></em>
+                        <em [ngClass]="pokemon.favourite ? 'fas fa-heart' : 'far fa-heart'"></em>
                     </td>
                     <th>
                         <em class="fas fa-edit"></em>
