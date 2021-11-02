@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Pokedex } from 'src/interfaces/pokedex.interface';
 import { Pokemon } from 'src/interfaces/pokemon.interface';
 import { Pokemons } from 'src/interfaces/pokemons.interface';
 import { environment } from '../../environments/environment';
@@ -26,7 +27,11 @@ export class PokemonsService {
       return this.http.get<Pokemon>(`${environment.pokemonApiURL}${pokemon}`)
     }
 
-    getNextPage(url:any) {
-      return this.http.get(url)
+    getNextPage(url:any):Observable<Pokemons> {
+      return this.http.get<Pokemons>(url)
+    }
+
+    getAllPokemons():Observable<Pokedex> {
+      return this.http.get<Pokedex>(environment.ddbbPokedexUrl)
     }
 }
