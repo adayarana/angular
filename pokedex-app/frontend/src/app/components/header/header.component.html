@@ -1,13 +1,18 @@
 <header class="header-container">
     <div class="header-container__nav-logo">
-        <h1><a routerLink="">PokedexApp</a></h1>
+        <div class="nav-logo__title">
+            <h1><a class="nav-link" routerLink="">PokedexApp</a></h1>
+        </div>
+        <button type="button" class="nav-menu-button" (click)="toggleHeader()">
+            <em [ngClass]="navButton ? 'fas fa-times' : 'fas fa-bars'"></em>
+        </button>
     </div>
     <nav class="header-container__nav-menu">
-        <ul>
-            <li><a routerLink="/favourites">Favourites</a></li>
-            <li><a routerLink="/pokedex">Pokedex</a></li>
+        <ul [ngClass]="navButton ? 'nav-menu__mobile--open' : 'nav-menu__mobile--close'">
+            <li><a class="nav-link" routerLink="/favourites">Favourites</a></li>
+            <li><a class="nav-link" routerLink="/pokedex">Pokedex</a></li>
             <li>
-                <form action="">
+                <form class="nav-menu__form" action="">
                     <input 
                     class="search"
                     id="search"

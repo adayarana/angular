@@ -58,7 +58,7 @@ export class CreatePokedexComponent implements OnInit {
   updatePokemon() {
     if(this.id !== null) {
       this.title = 'Update Pokemon'
-      this.action = 'Edit'
+      this.action = 'Update'
       const obs$ = this.pokemonsService.getPokemonById(this.id).subscribe((data) => {
         this.pokedexForm.setValue({
           name: data.name,
