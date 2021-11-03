@@ -1,6 +1,6 @@
 <div class="container">
     <div>
-        <span>NEW POKEMON</span>
+        <span>{{title}}</span>
         <form [formGroup]="pokedexForm" (ngSubmit)="addPokemon()">
             <div>
                 <label for="name">Name</label>
@@ -44,7 +44,7 @@
                 type="checkbox" 
                 >
             </div>
-            <button type="submit" [disabled]="pokedexForm.invalid">Add</button>
+            <button type="submit" [disabled]="pokedexForm.invalid">{{action}}</button>
         </form>
         <div>
             <button routerLink="/pokedex">Back</button>

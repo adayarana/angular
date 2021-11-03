@@ -34,4 +34,24 @@ export class PokemonsService {
     getAllPokemons():Observable<Pokedex> {
       return this.http.get<Pokedex>(environment.ddbbPokedexUrl)
     }
+
+    createPokemon(pokemon: Pokedex):Observable<Pokedex> {
+      return this.http.post<Pokedex>(environment.ddbbPokedexUrl, pokemon)
+    }
+
+    getPokemonById(id: string):Observable<Pokedex> {
+      return this.http.get<Pokedex>(`${environment.ddbbPokedexUrl}/${id}`)
+    }
+
+    updatePokemon(id: string, pokemon: Pokedex):Observable<any> {
+      return this.http.put<Pokedex>(`${environment.ddbbPokedexUrl}/${id}`, pokemon)
+    }
+
+    deletePokemon(id: string):Observable<any> {
+      return this.http.delete<Pokedex>(`${environment.ddbbPokedexUrl}/${id}`)
+    }
+
+    deleteAllPokemons():Observable<any> {
+      return this.http.delete<Pokedex>(environment.ddbbPokedexUrl)
+    }
 }

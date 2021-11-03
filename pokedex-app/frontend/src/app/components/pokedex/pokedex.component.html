@@ -1,8 +1,8 @@
 <div class="pokedex">
     <div>
-        <span>POKEDEX</span>
+        <span>Pokedex</span>
         <button routerLink="/create-pokedex">New</button>
-        <table>
+        <table *ngIf="pokedex.length > 0; else noPokedex">
             <thead>
                 <tr>
                     <th>#</th>
@@ -24,11 +24,17 @@
                         <em [ngClass]="pokemon.favourite ? 'fas fa-heart' : 'far fa-heart'"></em>
                     </td>
                     <th>
-                        <em class="fas fa-edit"></em>
-                        <em class="fas fa-trash"></em>
+                        <em [routerLink]="['/edit-pokedex', pokemon.id]" class="fas fa-edit"></em>
+                        <em (click)="deletePokemon(pokemon.id)" class="fas fa-trash"></em>
                     </th>
                 </tr>
             </tbody>
         </table>
+        <div *ngIf="pokedex.length > 1">
+            <button (click)="deleteAllPokemons()">Delete All</button>
+        </div>
+        <ng-template #noPokedex>
+            <p>No pokemons yet</p>
+        </ng-template>
     </div>
 </div>
