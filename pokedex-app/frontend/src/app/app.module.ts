@@ -12,12 +12,14 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FavouritesComponent } from './components/favourites/favourites.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FavouritesComponent
+    FavouritesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

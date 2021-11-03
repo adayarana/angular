@@ -7,11 +7,16 @@ import { PokemonsService } from 'src/app/services/pokemons.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  navButton = false
   searchText = ''
 
   constructor(private pokemonsService: PokemonsService) { }
 
   ngOnInit(): void {
+  }
+
+  toggleHeader() {
+    this.navButton = !this.navButton
   }
 
   searchPokemon(newSearch: string) {

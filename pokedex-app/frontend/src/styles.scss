@@ -26,6 +26,7 @@ button {
     transition: background linear 1.5s;
     box-shadow: 2px 2px $tertiary;
     text-shadow: none;
+    margin: 0.25rem;
 }
 
 button:hover {
@@ -81,9 +82,10 @@ a {
   color: $secondary;
   cursor: pointer;
   box-shadow: none;
-  text-shadow: none
+  text-shadow: none;
+  margin: 0.25rem;
 }
 
-.fa-heart, .fa-star {
+.fa-heart, .fa-star, .fa-times, .fa-bars {
   color: $tertiary
 }
