@@ -1,7 +1,9 @@
-<div class="container">
-    <div>
-        <span>{{title}}</span>
-        <form [formGroup]="pokedexForm" (ngSubmit)="addPokemon()">
+<div class="create-pokedex-container">
+    <div class="create-pokedex-container__title">
+        <h2>{{title}}</h2>
+    </div>
+    <div class="create-pokedex-container__form">
+        <form class="form__group" [formGroup]="pokedexForm" (ngSubmit)="addPokemon()">
             <div>
                 <label for="name">Name</label>
                 <input 

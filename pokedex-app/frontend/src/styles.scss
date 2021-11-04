@@ -13,6 +13,14 @@
     text-shadow: 0.25rem 0.25rem $secondary;
 }
 
+.toast-container * {
+    background: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-shadow: none;
+}
+
 button {
     all: unset;
     background: $secondary;
@@ -56,9 +64,14 @@ input {
     text-shadow: none;
   }
 
+input[type="checkbox"] {
+    box-shadow: none;
+    width: 1.25rem;
+}
+
 input:hover {
-  color: $primary;
-  text-shadow: none;
+    color: $primary;
+    text-shadow: none;
   }
 
 input:focus {
@@ -66,26 +79,31 @@ input:focus {
   }
 
 label {
-  margin: 0.5rem;
-  padding: 0.25rem;
+    margin: 0.5rem;
+    padding: 0.25rem;
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .fas, .far {
-  color: $secondary;
-  cursor: pointer;
-  box-shadow: none;
-  text-shadow: none;
-  margin: 0.25rem;
+    color: $secondary;
+    cursor: pointer;
+    box-shadow: none;
+    text-shadow: none;
+    margin: 0.25rem;
+}
+
+.fas:hover, .far:hover {
+    transform: scale(1.5);
+    transition: 1s;
 }
 
 .fa-heart, .fa-star, .fa-times, .fa-bars {
-  color: $tertiary
+    color: $tertiary
 }

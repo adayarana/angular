@@ -1,21 +1,27 @@
-<div>
-    <ul>
-        <li>
-            <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name">
-            <img [src]="pokemon.sprites.back_default" [alt]="pokemon.name">
-            <h3>{{ pokemon.name }} 
-                <em (click)="handleFavouritePokemon(pokemon)" class="far fa-heart"></em>
-            </h3>
-            <p>Pokedex: #{{pokemon.id}}</p>
-            <p>Type: {{pokemon.types[0].type.name}}</p>
-            <p>Health: {{pokemon.stats[0].base_stat}}</p>
-            <p>Attack: {{pokemon.stats[1].base_stat}}</p>
-            <p>Defense: {{pokemon.stats[2].base_stat}}</p>
-            <p>Experience: {{pokemon.base_experience}}</p>
-            <p>Weight: {{pokemon.weight}}</p>
-            <p>Height: {{pokemon.height}}</p>
-            <p><em class="fas fa-eye"></em>{{fans}} people are currently looking at this pokemon</p>
-        </li>
-    </ul>
-    <button routerLink="/">Back</button>
+<div class="pokemon-container">
+    <div class="pokemon-container__pokemon">
+        <ul class="pokemon__information">
+            <li>
+                <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name">
+                <img [src]="pokemon.sprites.back_default" [alt]="pokemon.name">
+                <h3>{{ pokemon.name }} 
+                    <em (click)="handleFavouritePokemon(pokemon)" class="far fa-heart"></em>
+                </h3>
+                <p>Pokedex: #{{pokemon.id}}</p>
+                <p>Type: {{pokemon.types[0].type.name}}</p>
+                <p>Health: {{pokemon.stats[0].base_stat}}</p>
+                <p>Attack: {{pokemon.stats[1].base_stat}}</p>
+                <p>Defense: {{pokemon.stats[2].base_stat}}</p>
+                <p>Experience: {{pokemon.base_experience}}</p>
+                <p>Weight: {{pokemon.weight}}</p>
+                <p>Height: {{pokemon.height}}</p>
+            </li>
+            <div class="pokemon__fans">
+                <p><em class="fas fa-eye"></em>{{fans}} people are currently looking at this pokemon</p>
+            </div>
+        </ul>
+    </div>
+    <div class="pokemon-container__button">
+        <button routerLink="/">Back</button>
+    </div>
 </div>

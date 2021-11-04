@@ -39,19 +39,19 @@ export class CreatePokedexComponent implements OnInit {
     if(this.id !== null) {
       // Update Pokemon
       const obs$ = this.pokemonsService.updatePokemon(this.id, pokemon).subscribe((data) => {
-        this.toastr.info('Pokemon updated successfully')
         this.router.navigate(['/pokedex'])
         this.pokedexForm.reset()
         obs$.unsubscribe()
       })
+      this.info('Pokemon updated successfully')
     } else {
       // Create Pokemon
       const obs$ = this.pokemonsService.createPokemon(pokemon).subscribe((data) => {
-        this.toastr.success('Pokemon added successfully')
         this.router.navigate(['/pokedex'])
         this.pokedexForm.reset()
         obs$.unsubscribe()
       })
+      this.success('Pokemon added successfully');
     }
   }
 
@@ -69,5 +69,19 @@ export class CreatePokedexComponent implements OnInit {
       })
     }
 
+  }
+
+  success(message: string):void {
+    this.toastr.success(message, 'Pokedex', {
+      timeOut: 3000,
+      extendedTimeOut: 1000
+    })
+  }
+
+  info(message: string):void {
+    this.toastr.info(message, 'Pokedex', {
+      timeOut: 3000,
+      extendedTimeOut: 1000
+    })
   }
 }

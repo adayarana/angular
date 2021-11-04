@@ -1,18 +1,20 @@
-<div class="container">
-    <div>
-        <ul>
-            <li *ngFor="let pokemon of pokemons">
-                <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name">
-                <h3>{{ pokemon.name }} 
-                    <em id="{{pokemon.name}}" (click)="handleFavouritePokemon(pokemon)" class="far fa-heart"></em>
-                </h3>
-                <p>Pokedex: #{{pokemon.id}}</p>
-                <p>Type: {{pokemon.types[0].type.name}}</p>
-                <p>Health: {{pokemon.stats[0].base_stat}}</p>
-                <button (click)="getMoreInfo(pokemon)">Info</button>
-            </li>
-        </ul>
-        <button (click)="previousPage()">Previous</button>
-        <button (click)="nextPage()">Next</button>
+    <div class="pokemons-container">
+        <div class="pokemons-container__pokemons">
+            <ul class="pokemons__information">
+                <li *ngFor="let pokemon of pokemons">
+                    <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name">
+                    <h3>{{ pokemon.name }} 
+                        <em id="{{pokemon.name}}" (click)="handleFavouritePokemon(pokemon)" class="far fa-heart"></em>
+                    </h3>
+                    <p>Pokedex: #{{pokemon.id}}</p>
+                    <p>Type: {{pokemon.types[0].type.name}}</p>
+                    <p>Health: {{pokemon.stats[0].base_stat}}</p>
+                    <button (click)="getMoreInfo(pokemon)">Info</button>
+                </li>
+            </ul>
+        </div>
+        <div class="pokemons-container__buttons">
+            <button (click)="previousPage()">Previous</button>
+            <button (click)="nextPage()">Next</button>
+        </div>
     </div>
-</div>

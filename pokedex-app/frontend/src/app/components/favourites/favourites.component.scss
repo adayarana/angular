@@ -1,0 +1,28 @@
+@import '../../../sass/var.scss';
+
+.favourites-container {
+    display: flex;
+    flex-direction: column;
+
+    .favourites-container__pokemons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .pokemon__information > img, h3, p {
+            text-transform: capitalize;
+        }
+    }
+
+    .favourites-container__nofavourites > span, p {
+            text-align: center;
+    }
+
+    .favourites-container__button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0.75rem;
+    }
+}

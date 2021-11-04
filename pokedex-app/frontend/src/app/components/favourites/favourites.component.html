@@ -1,7 +1,7 @@
-<div class="container">
-    <div *ngIf="favouritesPokemon.length > 0; else noFavourites">
+<div class="favourites-container">
+    <div class="favourites-container__pokemons" *ngIf="favouritesPokemon.length > 0; else noFavourites">
         <ul>
-            <li *ngFor="let pokemon of favouritesPokemon">
+            <li class="pokemon__information" *ngFor="let pokemon of favouritesPokemon">
                 <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name">
                 <h3>{{ pokemon.name }} 
                     <em class="fas fa-heart"></em>
@@ -10,12 +10,14 @@
                 <p>Pokedex: #{{pokemon.id}}</p>
                 <p>Type: {{pokemon.types[0].type.name}}</p>
                 <p>Health: {{pokemon.stats[0].base_stat}}</p>
-                <button (click)="getMoreInfo(pokemon)">More Info</button>
+                <button (click)="getMoreInfo(pokemon)">Info</button>
             </li>
         </ul>
     </div>
-    <ng-template #noFavourites>
+    <ng-template class="favourites-container__nofavourites" #noFavourites>
         <p>No favourites Pokemon yet</p>
     </ng-template>
-    <button routerLink="/">Back</button>
+    <div class="favourites-container__button">
+        <button routerLink="/">Back</button>
+    </div>
 </div>
