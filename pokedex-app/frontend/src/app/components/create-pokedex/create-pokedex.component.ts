@@ -16,13 +16,18 @@ export class CreatePokedexComponent implements OnInit {
   action = 'Add'
   id: string | null
 
-  constructor(private fb: FormBuilder, private router: Router, private toastr: ToastrService, private pokemonsService: PokemonsService, private aRouter: ActivatedRoute) { 
-    this.pokedexForm = this.fb.group({
-      name: ['', Validators.required],
-      level: ['', Validators.required],
-      favourite: [false, Validators.required]
-    })
-    this.id = this.aRouter.snapshot.paramMap.get('id')
+  constructor(
+    private fb: FormBuilder, 
+    private router: Router, 
+    private toastr: ToastrService, 
+    private pokemonsService: PokemonsService, 
+    private aRouter: ActivatedRoute) { 
+      this.pokedexForm = this.fb.group({
+        name: ['', Validators.required],
+        level: ['', Validators.required],
+        favourite: [false, Validators.required]
+      })
+      this.id = this.aRouter.snapshot.paramMap.get('id')
   }
 
   ngOnInit(): void {

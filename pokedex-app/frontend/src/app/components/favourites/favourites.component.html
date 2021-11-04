@@ -1,7 +1,7 @@
 <div class="favourites-container">
     <div class="favourites-container__pokemons" *ngIf="favouritesPokemon.length > 0; else noFavourites">
-        <ul>
-            <li class="pokemon__information" *ngFor="let pokemon of favouritesPokemon">
+        <ul class="pokemon__information">
+            <li *ngFor="let pokemon of favouritesPokemon">
                 <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name">
                 <h3>{{ pokemon.name }} 
                     <em class="fas fa-heart"></em>

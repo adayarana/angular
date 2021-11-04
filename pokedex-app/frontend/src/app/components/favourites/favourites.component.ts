@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Pokemon } from 'src/interfaces/pokemon.interface';
 import { PokemonsService } from 'src/app/services/pokemons.service';
@@ -8,13 +8,10 @@ import { PokemonsService } from 'src/app/services/pokemons.service';
   templateUrl: './favourites.component.html',
   styleUrls: ['./favourites.component.scss']
 })
-export class FavouritesComponent implements OnInit {
+export class FavouritesComponent {
   favouritesPokemon: Pokemon[] = this.pokemonsService.favouritesPokemon
 
   constructor(private pokemonsService: PokemonsService, private router: Router) { }
-
-  ngOnInit(): void {
-  }
 
   getMoreInfo(pokemon: Pokemon) {
     this.pokemonsService.pokemon = pokemon

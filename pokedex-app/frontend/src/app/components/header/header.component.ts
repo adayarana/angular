@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { PokemonsService } from 'src/app/services/pokemons.service';
 
 @Component({
@@ -6,14 +6,11 @@ import { PokemonsService } from 'src/app/services/pokemons.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   navButton = false
   searchText = ''
 
   constructor(private pokemonsService: PokemonsService) { }
-
-  ngOnInit(): void {
-  }
 
   toggleHeader() {
     this.navButton = !this.navButton
