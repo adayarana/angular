@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { PokemonsService } from 'src/app/services/pokemons.service';
-import { Pokedex } from 'src/interfaces/pokedex.interface';
 
 @Component({
   selector: 'app-pokedex',
@@ -26,17 +25,31 @@ export class PokedexComponent implements OnInit {
 
   deletePokemon(id: string) {
     const obs$ = this.pokemonsService.deletePokemon(id).subscribe((data) => {
-      this.toastr.error('Pokemon deleted successfully')
       this.getAllPokemons()
       obs$.unsubscribe()
     })
+    this.error('Pokemon deleted successfully')
   }
 
   deleteAllPokemons() {
     const obs$ = this.pokemonsService.deleteAllPokemons().subscribe((data) => {
-      this.toastr.success('Pokedex deleted successfully')
       this.getAllPokemons()
       obs$.unsubscribe()
+    })
+    this.warning('Pokedex deleted successfully')
+  }
+
+  warning(message: string):void {
+    this.toastr.warning(message, 'Pokedex', {
+      timeOut: 3000,
+      extendedTimeOut: 1000
+    })
+  }
+
+  error(message: string):void {
+    this.toastr.error(message, 'Pokedex', {
+      timeOut: 3000,
+      extendedTimeOut: 1000
     })
   }
 

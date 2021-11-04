@@ -28,7 +28,18 @@ import { FooterComponent } from './components/footer/footer.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      closeButton: false,
+      disableTimeOut: false,
+      tapToDismiss: true,
+      progressBar: true,
+      progressAnimation: 'increasing',
+      positionClass: 'toast-top-right',
+      titleClass: 'toast-title',
+      messageClass: 'toast-message',
+      toastClass: 'ngx-toastr'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

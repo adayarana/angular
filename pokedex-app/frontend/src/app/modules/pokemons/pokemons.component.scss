@@ -1,0 +1,43 @@
+@import '../../../sass/var.scss';
+
+.pokemons-container {
+    display: flex;
+    flex-direction: column;
+
+    .pokemons-container__pokemons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        
+        .pokemons_information > img, h3, p {
+            text-transform: capitalize;
+        }
+    }
+
+    .pokemons-container__buttons {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+ @media screen and (min-width: 415px) {
+
+     
+     .pokemons-container {
+
+         .pokemons-container__pokemons {
+             .pokemons__information {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+                
+                > li {
+                    margin: 1rem;
+                }
+            }
+         }
+     }
+
+ }
