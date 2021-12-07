@@ -23,11 +23,11 @@
 
 button {
     all: unset;
-    background: $secondary;
     color: $tertiary;
     border: 2px solid $tertiary;
     cursor: pointer;
     text-align: center;
+    background: $secondary;
     width: 70px;
     height: 30px;
     border-radius: 50em;
@@ -35,6 +35,10 @@ button {
     box-shadow: 2px 2px $tertiary;
     text-shadow: none;
     margin: 0.25rem;
+    vertical-align: middle;
+    touch-action: manipulation;
+    white-space: nowrap;
+    user-select: none;
 }
 
 button:hover {
@@ -76,6 +80,16 @@ input:hover {
 
 input:focus {
     border: 3px solid $tertiary;
+  }
+
+input::placeholder {
+    color: $tertiary;
+    font-style: italic;
+  }
+
+::selection {
+    background-color: $secondary;
+    color: $tertiary;
   }
 
 label {
