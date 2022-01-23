@@ -81,21 +81,6 @@ export class PokemonsComponent implements OnInit {
     }
 
     handleFavouritePokemon(pokemon: Pokemon) {
-      // const favouritePokemon = document.getElementById(pokemon.name)
-      // switch(favouritePokemon?.className) {
-      //   case 'far fa-heart':
-      //     favouritePokemon.className = 'fas fa-heart'
-      //     favouritePokemon.style.fontWeight = 'bold'
-      //     break;
-
-      //   case 'fas fa-heart':
-      //     favouritePokemon.className = 'far fa-heart'
-      //     favouritePokemon.style.fontWeight = ''
-      //     break;
-
-      //   default:
-      //     favouritePokemon!.className = 'far fa-heart'
-      // }
       this.pokemonsService.favouritesPokemon.push(pokemon)
       this.pokemonsService.favouritesPokemon.sort((a: any, b: any) => a.id - b.id)
       this.favouritesPokemon = this.pokemonsService.favouritesPokemon

@@ -28,7 +28,7 @@ export class PokedexComponent implements OnInit {
       this.getAllPokemons()
       obs$.unsubscribe()
     })
-    this.error('Pokemon deleted successfully')
+    this.toastrError('Pokemon deleted successfully')
   }
 
   deleteAllPokemons() {
@@ -36,17 +36,17 @@ export class PokedexComponent implements OnInit {
       this.getAllPokemons()
       obs$.unsubscribe()
     })
-    this.warning('Pokedex deleted successfully')
+    this.toastrWarning('Pokedex deleted successfully')
   }
 
-  warning(message: string):void {
+  toastrWarning(message: string):void {
     this.toastr.warning(message, 'Pokedex', {
       timeOut: 3000,
       extendedTimeOut: 1000
     })
   }
 
-  error(message: string):void {
+  toastrError(message: string):void {
     this.toastr.error(message, 'Pokedex', {
       timeOut: 3000,
       extendedTimeOut: 1000

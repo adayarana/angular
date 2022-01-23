@@ -48,7 +48,7 @@ export class CreatePokedexComponent implements OnInit {
         this.pokedexForm.reset()
         obs$.unsubscribe()
       })
-      this.info('Pokemon updated successfully')
+      this.toastrInfo('Pokemon updated successfully')
     } else {
       // Create Pokemon
       const obs$ = this.pokemonsService.createPokemon(pokemon).subscribe((data) => {
@@ -56,7 +56,7 @@ export class CreatePokedexComponent implements OnInit {
         this.pokedexForm.reset()
         obs$.unsubscribe()
       })
-      this.success('Pokemon added successfully');
+      this.toastrSuccess('Pokemon added successfully');
     }
   }
 
@@ -76,14 +76,14 @@ export class CreatePokedexComponent implements OnInit {
 
   }
 
-  success(message: string):void {
+  toastrSuccess(message: string):void {
     this.toastr.success(message, 'Pokedex', {
       timeOut: 3000,
       extendedTimeOut: 1000
     })
   }
 
-  info(message: string):void {
+  toastrInfo(message: string):void {
     this.toastr.info(message, 'Pokedex', {
       timeOut: 3000,
       extendedTimeOut: 1000
