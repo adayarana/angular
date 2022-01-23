@@ -20,6 +20,10 @@
 
         .details__info > p {
             padding: 0.2rem;
+
+            > img {
+                width: 2rem;
+            }
         }
 
         .details__text {

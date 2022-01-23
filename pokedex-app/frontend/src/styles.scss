@@ -10,7 +10,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    text-shadow: 0.25rem 0.25rem $secondary;
+    text-shadow: 0.2rem 0.1rem 0.1rem $secondary;
 }
 
 .toast-container * {
@@ -24,7 +24,7 @@
 button {
     all: unset;
     color: $tertiary;
-    border: 2px solid $tertiary;
+    border: 2px solid $primary;
     cursor: pointer;
     text-align: center;
     background: $secondary;
@@ -32,7 +32,7 @@ button {
     height: 30px;
     border-radius: 50em;
     transition: background linear 1.5s;
-    box-shadow: 2px 2px $tertiary;
+    box-shadow: 2px 2px $secondary;
     text-shadow: none;
     margin: 0.25rem;
     vertical-align: middle;
@@ -66,31 +66,32 @@ input {
     padding: 0.25rem;
     box-shadow: 2px 2px $tertiary;
     text-shadow: none;
-  }
-
-input[type="checkbox"] {
-    box-shadow: none;
-    width: 1.25rem;
 }
 
 input:hover {
     color: $primary;
     text-shadow: none;
-  }
+}
 
 input:focus {
     border: 3px solid $tertiary;
-  }
+}
 
 input::placeholder {
     color: $tertiary;
     font-style: italic;
-  }
+}
+
+input[type="checkbox"] {
+    accent-color: $tertiary;
+    box-shadow: none;
+    width: 1.25rem;
+}
 
 ::selection {
     background-color: $secondary;
     color: $tertiary;
-  }
+}
 
 label {
     margin: 0.5rem;
@@ -118,6 +119,6 @@ a {
     transition: 1s;
 }
 
-.fa-heart, .fa-star, .fa-times, .fa-bars {
-    color: $tertiary
+.fa-heart, .fa-times, .fa-bars {
+    color: $tertiary;
 }
